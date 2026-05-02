@@ -40,7 +40,7 @@ export function Testimonials() {
     <section
       id="testimonials"
       aria-labelledby="testimonials-heading"
-      className="bg-surface py-16 sm:py-20"
+      className="bg-surface py-16 sm:py-20 lg:py-24"
     >
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
@@ -59,10 +59,7 @@ export function Testimonials() {
           </p>
         </div>
 
-        <ul
-          role="list"
-          className="mt-10 grid gap-6 md:grid-cols-3"
-        >
+        <ul role="list" className="mt-10 grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t) => (
             <li key={t.name}>
               <figure className="flex h-full flex-col gap-5 rounded-2xl bg-white p-6 ring-1 ring-outline-soft shadow-card sm:p-7">
@@ -81,7 +78,7 @@ export function Testimonials() {
                   ))}
                 </div>
                 <blockquote className="flex-1">
-                  <p className="text-base leading-relaxed text-ink">
+                  <p className="text-base leading-8 text-ink">
                     {t.quote}
                   </p>
                 </blockquote>

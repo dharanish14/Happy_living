@@ -20,14 +20,14 @@ export function ContactPage() {
 
       <section
         aria-labelledby="reach-heading"
-        className="bg-surface py-14 sm:py-18"
+        className="bg-surface py-16 sm:py-20"
       >
         <div className="container-page">
           <h2 id="reach-heading" className="sr-only">
             Ways to reach us
           </h2>
           <ul role="list" className="grid gap-5 md:grid-cols-3">
-            <li className="rounded-2xl bg-white p-6 ring-1 ring-outline-soft shadow-card">
+            <li className="rounded-2xl bg-white p-6 ring-1 ring-outline-soft shadow-card sm:p-7">
               <span className="grid size-11 place-items-center rounded-lg bg-navy/5 text-navy">
                 <Phone className="size-5" />
               </span>
@@ -39,12 +39,12 @@ export function ContactPage() {
               </p>
               <a
                 href="tel:+919800000000"
-                className="focus-ring-gold mt-3 inline-block font-headline text-base font-semibold text-navy hover:text-navy-dark"
+                className="focus-ring-gold mt-3 inline-block rounded-sm py-1 font-headline text-base font-semibold text-navy hover:text-navy-dark"
               >
                 +91 98000 00000
               </a>
             </li>
-            <li className="rounded-2xl bg-white p-6 ring-1 ring-outline-soft shadow-card">
+            <li className="rounded-2xl bg-white p-6 ring-1 ring-outline-soft shadow-card sm:p-7">
               <span className="grid size-11 place-items-center rounded-lg bg-navy/5 text-navy">
                 <Mail className="size-5" />
               </span>
@@ -56,12 +56,12 @@ export function ContactPage() {
               </p>
               <a
                 href="mailto:advisor@srghappyliving.com"
-                className="focus-ring-gold mt-3 inline-block break-all font-headline text-base font-semibold text-navy hover:text-navy-dark"
+                className="focus-ring-gold mt-3 inline-block break-all rounded-sm py-1 font-headline text-base font-semibold text-navy hover:text-navy-dark"
               >
                 advisor@srghappyliving.com
               </a>
             </li>
-            <li className="rounded-2xl bg-white p-6 ring-1 ring-outline-soft shadow-card">
+            <li className="rounded-2xl bg-white p-6 ring-1 ring-outline-soft shadow-card sm:p-7">
               <span className="grid size-11 place-items-center rounded-lg bg-navy/5 text-navy">
                 <MapPin className="size-5" />
               </span>
@@ -85,7 +85,7 @@ export function ContactPage() {
 
       <section
         aria-labelledby="hours-heading"
-        className="bg-surface-muted/60 py-20 sm:py-24"
+        className="bg-surface-muted/60 py-20 sm:py-24 lg:py-28"
       >
         <div className="container-page">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -99,7 +99,7 @@ export function ContactPage() {
               >
                 When you can reach us.
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-ink-muted">
+              <p className="mt-4 text-base leading-8 text-ink-muted">
                 For urgent client matters outside these hours, your principal
                 advisor is reachable on their direct WhatsApp line.
               </p>

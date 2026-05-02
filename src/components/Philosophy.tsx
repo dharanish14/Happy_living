@@ -35,7 +35,7 @@ export function Philosophy() {
     <section
       id="philosophy"
       aria-labelledby="philosophy-heading"
-      className="bg-surface-muted/60 py-20 sm:py-24"
+      className="bg-surface-muted/60 py-20 sm:py-24 lg:py-28"
     >
       <div className="container-page">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -90,7 +90,7 @@ export function Philosophy() {
               >
                 The Philosophy of Precise Growth
               </h2>
-              <p className="text-base leading-relaxed text-ink-muted sm:text-lg">
+              <p className="text-base leading-8 text-ink-muted sm:text-lg">
                 Three principles guide every recommendation we make — anchoring
                 long-term wealth creation in evidence, discipline and your
                 personal context.
@@ -110,7 +110,7 @@ export function Philosophy() {
                     <h3 className="font-headline text-lg font-semibold text-navy-dark">
                       {p.title}
                     </h3>
-                    <p className="mt-1 text-[15px] leading-relaxed text-ink-muted">
+                    <p className="mt-1 text-base leading-8 text-ink-muted">
                       {p.description}
                     </p>
                   </div>

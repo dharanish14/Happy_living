@@ -26,7 +26,7 @@ export function CtaBanner({
   return (
     <section
       aria-label={title}
-      className="bg-surface py-16 sm:py-20"
+      className="bg-surface py-16 sm:py-20 lg:py-24"
     >
       <div className="container-page">
         <div className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-white via-surface-sunk to-surface-muted/80 p-7 ring-1 ring-outline-soft shadow-elevated sm:p-10 lg:p-14">
@@ -45,11 +45,11 @@ export function CtaBanner({
                 <span className="size-1.5 rounded-full bg-gold" aria-hidden="true" />
                 {eyebrow}
               </p>
-              <h2 className="mt-3 text-balance font-headline text-3xl font-bold leading-[1.05] tracking-tight text-navy-dark sm:text-4xl lg:text-5xl">
+              <h2 className="mt-3 text-balance font-headline text-3xl font-bold leading-[1.08] tracking-tight text-navy-dark sm:text-4xl lg:text-5xl">
                 {title}
               </h2>
               {description ? (
-                <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">
+                <p className="mt-4 max-w-2xl text-base leading-8 text-ink-muted sm:text-lg">
                   {description}
                 </p>
               ) : null}
@@ -61,6 +61,7 @@ export function CtaBanner({
                 className={buttonClasses({
                   variant: primary.variant ?? 'primary',
                   size: 'lg',
+                  className: 'w-full sm:w-auto lg:w-full',
                 })}
               >
                 {primary.label}
@@ -72,6 +73,7 @@ export function CtaBanner({
                   className={buttonClasses({
                     variant: secondary.variant ?? 'secondary',
                     size: 'lg',
+                    className: 'w-full sm:w-auto lg:w-full',
                   })}
                 >
                   {secondary.label}

@@ -45,23 +45,25 @@ export function ContactSection() {
     }
   }
 
-  const validate = (): boolean => {
+  const validate = (): Partial<Record<keyof FormState, string>> => {
     const next: Partial<Record<keyof FormState, string>> = {}
     if (!form.fullName.trim()) next.fullName = 'Please enter your full name.'
     if (!/^\+?[0-9 ()-]{7,}$/.test(form.phone.trim()))
       next.phone = 'Enter a valid phone number with country code if applicable.'
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim()))
       next.email = 'Enter a valid email address.'
-    setErrors(next)
-    return Object.keys(next).length === 0
+    return next
   }
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (!validate()) {
+    const nextErrors = validate()
+    setErrors(nextErrors)
+
+    if (Object.keys(nextErrors).length > 0) {
       const firstErrorKey = (
-        ['fullName', 'phone', 'email', 'notes'] as Array<keyof FormState>
-      ).find((k) => Boolean(errors[k]))
+        ['fullName', 'phone', 'email'] as Array<keyof FormState>
+      ).find((k) => Boolean(nextErrors[k]))
       if (firstErrorKey) {
         const el = document.getElementById(ids[firstErrorKey])
         el?.focus()
@@ -75,10 +77,10 @@ export function ContactSection() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="bg-surface py-20 sm:py-24"
+      className="bg-surface py-20 sm:py-24 lg:py-28"
     >
       <div className="container-page">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16 xl:gap-20">
           <div className="flex flex-col gap-8 lg:col-span-5">
             <div className="flex flex-col gap-4">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-navy">
@@ -90,7 +92,7 @@ export function ContactSection() {
               >
                 Begin Your Wealth Journey
               </h2>
-              <p className="text-base leading-relaxed text-ink-muted sm:text-lg">
+              <p className="text-base leading-8 text-ink-muted sm:text-lg">
                 Schedule a confidential discovery session with our lead
                 advisor. We will map your goals and recommend a thoughtful
                 architecture per your context.
@@ -108,7 +110,7 @@ export function ContactSection() {
                   </p>
                   <a
                     href="tel:+919800000000"
-                    className="focus-ring-gold mt-0.5 inline-block font-headline text-base font-semibold text-navy-dark hover:text-navy"
+                    className="focus-ring-gold mt-1 inline-block rounded-sm py-1 font-headline text-base font-semibold text-navy-dark hover:text-navy"
                   >
                     +91 98000 00000
                   </a>
@@ -124,7 +126,7 @@ export function ContactSection() {
                   </p>
                   <a
                     href="mailto:advisor@srghappyliving.com"
-                    className="focus-ring-gold mt-0.5 inline-block break-all font-headline text-base font-semibold text-navy-dark hover:text-navy"
+                    className="focus-ring-gold mt-1 inline-block break-all rounded-sm py-1 font-headline text-base font-semibold text-navy-dark hover:text-navy"
                   >
                     advisor@srghappyliving.com
                   </a>
@@ -138,14 +140,14 @@ export function ContactSection() {
                   <p className="text-xs font-semibold uppercase tracking-wide text-ink-muted">
                     Office
                   </p>
-                  <p className="mt-0.5 font-headline text-base font-semibold text-navy-dark">
+                  <p className="mt-1 font-headline text-base font-semibold text-navy-dark">
                     14 Brigade Square, MG Road, Bengaluru 560001
                   </p>
                 </div>
               </li>
             </ul>
 
-            <p className="inline-flex items-center gap-2 rounded-lg bg-navy-dark/5 p-3 text-sm text-ink-muted">
+            <p className="inline-flex items-center gap-2 rounded-xl bg-navy-dark/5 p-4 text-sm leading-6 text-ink-muted">
               <ShieldCheck className="size-4 shrink-0 text-success" />
               All conversations are confidential. We never share your data with
               third parties.
@@ -153,14 +155,23 @@ export function ContactSection() {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="overflow-hidden rounded-2xl bg-white p-6 ring-1 ring-outline-soft shadow-elevated sm:p-8">
+            <div className="overflow-hidden rounded-2xl bg-white p-6 ring-1 ring-outline-soft shadow-elevated sm:p-8 lg:p-9">
               {submitted ? (
                 <SuccessPanel name={form.fullName} onReset={() => {
                   setForm(INITIAL)
+                  setErrors({})
                   setSubmitted(false)
                 }} />
               ) : (
                 <form noValidate onSubmit={onSubmit} className="flex flex-col gap-5">
+                  {Object.keys(errors).length > 0 ? (
+                    <div
+                      role="alert"
+                      className="rounded-xl border border-error/20 bg-error/5 px-4 py-3 text-sm leading-6 text-error"
+                    >
+                      Please correct the highlighted fields before submitting.
+                    </div>
+                  ) : null}
                   <div className="grid gap-5 sm:grid-cols-2">
                     <Field
                       id={ids.fullName}
@@ -172,6 +183,7 @@ export function ContactSection() {
                         id={ids.fullName}
                         type="text"
                         autoComplete="name"
+                        required
                         value={form.fullName}
                         onChange={(e) => update('fullName', e.target.value)}
                         aria-invalid={Boolean(errors.fullName)}
@@ -192,6 +204,7 @@ export function ContactSection() {
                         type="tel"
                         autoComplete="tel"
                         inputMode="tel"
+                        required
                         value={form.phone}
                         onChange={(e) => update('phone', e.target.value)}
                         aria-invalid={Boolean(errors.phone)}
@@ -209,6 +222,7 @@ export function ContactSection() {
                       type="email"
                       autoComplete="email"
                       inputMode="email"
+                      required
                       value={form.email}
                       onChange={(e) => update('email', e.target.value)}
                       aria-invalid={Boolean(errors.email)}
@@ -266,12 +280,12 @@ export function ContactSection() {
                     />
                   </Field>
 
-                  <div className="flex flex-col gap-2 pt-1 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="text-xs text-ink-muted">
+                  <div className="flex flex-col gap-3 pt-1 lg:flex-row lg:items-center lg:justify-between">
+                    <p className="max-w-xl text-sm leading-6 text-ink-muted">
                       By submitting, you consent to be contacted by SRG Happy
                       Living regarding your enquiry.
                     </p>
-                    <Button type="submit" size="lg">
+                    <Button type="submit" size="lg" fullWidth className="lg:w-auto">
                       Request Advisory Call
                     </Button>
                   </div>
@@ -287,7 +301,7 @@ export function ContactSection() {
 
 function inputCls(hasError: boolean): string {
   return [
-    'block w-full rounded-lg border bg-white px-3.5 py-3 text-base text-ink placeholder:text-ink-subtle/80 transition-colors motion-reduce:transition-none',
+    'block w-full rounded-lg border bg-white px-4 py-3 text-base leading-6 text-ink placeholder:text-ink-subtle/80 transition-colors motion-reduce:transition-none',
     'focus:outline-none focus-visible:outline-none focus:ring-3 focus:ring-gold/40 focus:border-navy',
     hasError
       ? 'border-error/70 focus:ring-error/30 focus:border-error'
@@ -306,7 +320,7 @@ type FieldProps = {
 
 function Field({ id, label, required, hint, error, children }: FieldProps) {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex flex-col gap-2">
       <label
         htmlFor={id}
         className="font-headline text-sm font-semibold text-navy-dark"
@@ -338,14 +352,14 @@ function Field({ id, label, required, hint, error, children }: FieldProps) {
 
 function SuccessPanel({ name, onReset }: { name: string; onReset: () => void }) {
   return (
-    <div role="status" className="flex flex-col items-center gap-4 py-6 text-center">
+    <div role="status" aria-live="polite" className="flex flex-col items-center gap-4 py-6 text-center">
       <span className="grid size-14 place-items-center rounded-full bg-success/12 text-success">
         <CheckCircle className="size-7" />
       </span>
       <h3 className="font-headline text-2xl font-bold text-navy-dark">
         Thank you{name ? `, ${name.split(' ')[0]}` : ''}.
       </h3>
-      <p className="max-w-md text-base leading-relaxed text-ink-muted">
+      <p className="max-w-md text-base leading-8 text-ink-muted">
         Your request has been received. A senior advisor will reach out within
         one business day to schedule your confidential discovery session.
       </p>

@@ -6,7 +6,7 @@ export function AdvisorySuites() {
     <section
       id="advisory"
       aria-labelledby="advisory-heading"
-      className="bg-surface py-20 sm:py-24"
+      className="bg-surface py-20 sm:py-24 lg:py-28"
     >
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
@@ -19,7 +19,7 @@ export function AdvisorySuites() {
           >
             Strategic Advisory Suites
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-ink-muted sm:text-lg">
+          <p className="mt-4 text-base leading-8 text-ink-muted sm:text-lg">
             Bespoke financial solutions tailored to the sophisticated needs of
             modern investors and high-net-worth individuals.
           </p>
@@ -123,7 +123,7 @@ function FeatureCard({
             {title}
           </h3>
 
-          <p className="text-base leading-relaxed text-white/75">
+          <p className="text-base leading-8 text-white/85">
             {description}
           </p>
         </div>
@@ -131,7 +131,7 @@ function FeatureCard({
         <div className="relative mt-auto pt-7">
           <Link
             to="/contact"
-            className="focus-ring-gold inline-flex items-center gap-2 rounded-[var(--radius-button)] bg-gold px-5 py-2.5 text-sm font-semibold text-navy-dark transition-transform motion-reduce:transition-none hover:-translate-y-0.5"
+            className="focus-ring-gold inline-flex min-h-11 items-center gap-2 rounded-[var(--radius-button)] bg-gold px-5 py-3 text-sm font-semibold text-navy-dark transition-transform motion-reduce:transition-none hover:-translate-y-0.5"
           >
             {ctaLabel}
             <ArrowRight className="size-4" />
@@ -158,7 +158,7 @@ function FeatureCard({
         <h3 className="font-headline text-xl font-semibold leading-snug text-navy-dark">
           {title}
         </h3>
-        <p className="text-[15px] leading-relaxed text-ink-muted">
+        <p className="text-base leading-8 text-ink-muted">
           {description}
         </p>
       </div>

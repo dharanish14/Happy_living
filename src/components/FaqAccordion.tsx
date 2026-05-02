@@ -35,7 +35,7 @@ export function FaqAccordion() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="bg-surface-muted/60 py-20 sm:py-24"
+      className="bg-surface-muted/60 py-20 sm:py-24 lg:py-28"
     >
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
@@ -54,7 +54,7 @@ export function FaqAccordion() {
           </p>
         </div>
 
-        <ul className="mx-auto mt-12 flex max-w-3xl flex-col gap-3">
+        <ul className="mx-auto mt-12 flex max-w-3xl flex-col gap-4">
           {FAQS.map((faq) => {
             const isOpen = openId === faq.id
             const buttonId = `${faq.id}-button`
@@ -76,7 +76,7 @@ export function FaqAccordion() {
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => setOpenId(isOpen ? null : faq.id)}
-                    className="focus-ring-gold flex w-full items-center justify-between gap-4 px-5 py-5 text-left font-headline text-base font-semibold text-navy-dark sm:px-6 sm:text-lg"
+                    className="focus-ring-gold flex min-h-14 w-full items-center justify-between gap-4 px-5 py-5 text-left font-headline text-base font-semibold text-navy-dark sm:px-6 sm:text-lg"
                   >
                     <span>{faq.question}</span>
                     <span
@@ -97,7 +97,7 @@ export function FaqAccordion() {
                   hidden={!isOpen}
                   className="px-5 pb-6 sm:px-6"
                 >
-                  <p className="max-w-prose text-[15px] leading-relaxed text-ink-muted sm:text-base">
+                  <p className="max-w-prose text-base leading-8 text-ink-muted">
                     {faq.answer}
                   </p>
                 </div>

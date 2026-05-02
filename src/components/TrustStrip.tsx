@@ -15,7 +15,7 @@ export function TrustStrip() {
   return (
     <section
       aria-labelledby="trust-heading"
-      className="bg-surface-muted/70 py-12 sm:py-14"
+      className="bg-surface-muted/70 py-14 sm:py-16"
     >
       <div className="container-page">
         <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
@@ -35,11 +35,11 @@ export function TrustStrip() {
               className="mt-4 block h-px w-12 bg-gold"
             />
           </div>
-          <dl className="grid grid-cols-2 gap-x-6 gap-y-8 lg:col-span-9 lg:grid-cols-4">
+          <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-9 lg:grid-cols-4">
             {STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="border-l border-outline-soft pl-5"
+                className="rounded-2xl bg-white px-5 py-5 ring-1 ring-outline-soft shadow-card"
               >
                 <dt className="sr-only">{stat.label}</dt>
                 <dd>
@@ -49,7 +49,7 @@ export function TrustStrip() {
                       <span className="ml-0.5 text-gold">{stat.suffix}</span>
                     ) : null}
                   </p>
-                  <p className="mt-2 text-sm leading-snug text-ink-muted">
+                  <p className="mt-2 text-sm leading-6 text-ink-muted">
                     {stat.label}
                   </p>
                 </dd>

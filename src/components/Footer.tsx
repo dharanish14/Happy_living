@@ -44,14 +44,15 @@ export function Footer() {
               <span className="inline-block rounded-xl bg-white p-2.5 ring-1 ring-white/15 shadow-elevated">
                 <img
                   src="/logo.png"
-                  alt="SRG Happy Living Financial Services"
+                  alt=""
+                  aria-hidden="true"
                   className="block h-14 w-auto"
                   width={320}
                   height={224}
                 />
               </span>
             </Link>
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
+            <p className="mt-5 max-w-sm text-sm leading-7 text-white/82">
               A SEBI-registered investment advisory crafting calm,
               evidence-based wealth strategies that compound across decades.
             </p>
@@ -70,7 +71,7 @@ export function Footer() {
                 <li key={item.label}>
                   <Link
                     to={item.to}
-                    className="focus-ring-gold inline-block rounded-sm text-sm text-white/70 hover:text-white"
+                    className="focus-ring-gold inline-block rounded-sm py-1 text-sm text-white/82 hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -88,7 +89,7 @@ export function Footer() {
                 <li key={item.label}>
                   <Link
                     to={item.to}
-                    className="focus-ring-gold inline-block rounded-sm text-sm text-white/70 hover:text-white"
+                    className="focus-ring-gold inline-block rounded-sm py-1 text-sm text-white/82 hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -101,7 +102,7 @@ export function Footer() {
             <h3 className="font-headline text-sm font-semibold uppercase tracking-[0.14em] text-white/85">
               Location
             </h3>
-            <address className="mt-4 not-italic text-sm leading-relaxed text-white/70">
+            <address className="mt-4 not-italic text-sm leading-7 text-white/82">
               {LOCATION.map((line) => (
                 <span key={line} className="block">
                   {line}
@@ -117,7 +118,7 @@ export function Footer() {
           <p>
             © {year} SRG Happy Living Advisory Pvt. Ltd. All rights reserved.
           </p>
-          <p className="max-w-2xl sm:text-right">
+          <p className="max-w-2xl leading-6 text-white/70 sm:text-right">
             Investments are subject to market risk. Please read all
             scheme-related documents carefully. Past performance is not
             indicative of future returns.
