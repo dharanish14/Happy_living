@@ -31,7 +31,7 @@ export function HeroSection() {
               className="text-pretty text-4xl font-bold leading-[1.1] tracking-tight text-navy-dark sm:text-5xl lg:text-[56px] xl:text-6xl"
             >
               Architecture for your{' '}
-              <span className="italic text-navy bg-[linear-gradient(transparent_62%,rgb(212_175_55_/_0.4)_62%)] [box-decoration-break:clone] [-webkit-box-decoration-break:clone] px-0.5">
+              <span className="gold-highlight italic text-navy">
                 financial serenity
               </span>
               .

@@ -154,6 +154,18 @@ body {
   }
 }
 
+@utility gold-highlight {
+  background-image: linear-gradient(
+    to top,
+    rgb(212 175 55 / 0.4) 0,
+    rgb(212 175 55 / 0.4) 38%,
+    transparent 38%
+  );
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding-inline: 0.125rem;
+}
+
 ::selection {
   background-color: rgb(212 175 55 / 0.35);
   color: var(--color-navy-dark);
