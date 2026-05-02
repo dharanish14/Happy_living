@@ -27,25 +27,25 @@ export function PageHeader({
         className="absolute -bottom-32 -left-20 -z-10 size-[460px] rounded-full bg-navy/10 blur-3xl"
       />
 
-      <div className="container-page py-20 sm:py-24 lg:py-32 xl:py-40">
-        <div className="max-w-5xl">
+      <div className="container-page py-14 sm:py-18 lg:py-24">
+        <div className="max-w-3xl">
           {eyebrow ? (
-            <p className="text-base font-semibold uppercase tracking-[0.2em] text-navy">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-navy">
               {eyebrow}
             </p>
           ) : null}
           <h1
             id="page-title"
-            className="mt-5 text-balance text-6xl font-bold leading-[1.04] tracking-tight text-navy-dark sm:text-7xl lg:text-[88px] xl:text-[112px]"
+            className="mt-3 text-balance text-4xl font-bold leading-[1.05] tracking-tight text-navy-dark sm:text-5xl lg:text-6xl"
           >
             {title}
           </h1>
           {description ? (
-            <p className="mt-7 max-w-3xl text-xl leading-relaxed text-ink-muted sm:text-2xl lg:text-[28px]">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">
               {description}
             </p>
           ) : null}
-          {children ? <div className="mt-10">{children}</div> : null}
+          {children ? <div className="mt-7">{children}</div> : null}
         </div>
       </div>
     </section>

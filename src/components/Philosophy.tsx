@@ -79,38 +79,38 @@ export function Philosophy() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-10">
-            <div className="flex flex-col gap-5">
-              <p className="text-base font-semibold uppercase tracking-[0.18em] text-navy">
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-navy">
                 Our Approach
               </p>
               <h2
                 id="philosophy-heading"
-                className="text-balance text-5xl font-bold tracking-tight text-navy-dark sm:text-6xl lg:text-7xl"
+                className="text-3xl font-bold tracking-tight text-navy-dark sm:text-4xl lg:text-5xl"
               >
                 The Philosophy of Precise Growth
               </h2>
-              <p className="text-xl leading-relaxed text-ink-muted sm:text-2xl">
+              <p className="text-base leading-relaxed text-ink-muted sm:text-lg">
                 Three principles guide every recommendation we make — anchoring
                 long-term wealth creation in evidence, discipline and your
                 personal context.
               </p>
             </div>
 
-            <ul className="flex flex-col gap-6">
+            <ul className="flex flex-col gap-5">
               {PRINCIPLES.map((p) => (
                 <li
                   key={p.title}
-                  className="flex gap-5 rounded-xl bg-white/60 p-5 ring-1 ring-outline-soft/60 backdrop-blur-sm sm:p-6"
+                  className="flex gap-4 rounded-xl bg-white/60 p-4 ring-1 ring-outline-soft/60 backdrop-blur-sm sm:p-5"
                 >
-                  <span className="grid size-12 shrink-0 place-items-center rounded-lg bg-gold/15 text-navy-dark">
+                  <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-gold/15 text-navy-dark">
                     {p.icon}
                   </span>
                   <div>
-                    <h3 className="font-headline text-2xl font-semibold text-navy-dark">
+                    <h3 className="font-headline text-lg font-semibold text-navy-dark">
                       {p.title}
                     </h3>
-                    <p className="mt-2 text-lg leading-relaxed text-ink-muted">
+                    <p className="mt-1 text-[15px] leading-relaxed text-ink-muted">
                       {p.description}
                     </p>
                   </div>

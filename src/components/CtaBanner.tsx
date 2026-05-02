@@ -26,30 +26,30 @@ export function CtaBanner({
   return (
     <section
       aria-label={title}
-      className="bg-surface py-20 sm:py-24 lg:py-28"
+      className="bg-surface py-16 sm:py-20"
     >
       <div className="container-page">
-        <div className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-white via-surface-sunk to-surface-muted/80 p-8 ring-1 ring-outline-soft shadow-elevated sm:p-12 lg:p-16">
+        <div className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-white via-surface-sunk to-surface-muted/80 p-7 ring-1 ring-outline-soft shadow-elevated sm:p-10 lg:p-14">
           <div
             aria-hidden="true"
-            className="absolute -right-24 -top-24 -z-10 size-[420px] rounded-full bg-gold/12 blur-3xl"
+            className="absolute -right-24 -top-24 -z-10 size-[360px] rounded-full bg-gold/12 blur-3xl"
           />
           <div
             aria-hidden="true"
-            className="absolute -bottom-32 -left-20 -z-10 size-[420px] rounded-full bg-navy/10 blur-3xl"
+            className="absolute -bottom-32 -left-20 -z-10 size-[360px] rounded-full bg-navy/10 blur-3xl"
           />
 
-          <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+          <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-8">
-              <p className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-navy">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy">
                 <span className="size-1.5 rounded-full bg-gold" aria-hidden="true" />
                 {eyebrow}
               </p>
-              <h2 className="mt-4 text-balance font-headline text-4xl font-bold leading-[1.05] tracking-tight text-navy-dark sm:text-5xl lg:text-6xl">
+              <h2 className="mt-3 text-balance font-headline text-3xl font-bold leading-[1.05] tracking-tight text-navy-dark sm:text-4xl lg:text-5xl">
                 {title}
               </h2>
               {description ? (
-                <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-muted sm:text-xl">
+                <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">
                   {description}
                 </p>
               ) : null}

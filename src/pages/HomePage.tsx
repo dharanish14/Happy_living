@@ -62,50 +62,50 @@ export function HomePage() {
 
       <section
         aria-labelledby="suites-preview-heading"
-        className="bg-surface py-24 sm:py-28 lg:py-32"
+        className="bg-surface py-16 sm:py-20 lg:py-24"
       >
         <div className="container-page">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <p className="text-base font-semibold uppercase tracking-[0.18em] text-navy">
+          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-navy">
                 What we do
               </p>
               <h2
                 id="suites-preview-heading"
-                className="mt-4 text-balance text-5xl font-bold tracking-tight text-navy-dark sm:text-6xl lg:text-7xl"
+                className="mt-3 text-balance text-3xl font-bold tracking-tight text-navy-dark sm:text-4xl lg:text-5xl"
               >
                 Strategic advisory, end to end.
               </h2>
             </div>
             <Link
               to="/services"
-              className="focus-ring-gold inline-flex items-center gap-2 self-start rounded-md text-lg font-semibold text-navy hover:text-navy-dark md:self-end"
+              className="focus-ring-gold inline-flex items-center gap-2 self-start rounded-md text-sm font-semibold text-navy hover:text-navy-dark md:self-end"
             >
               Explore all services
-              <ArrowRight className="size-5" />
+              <ArrowRight className="size-4" />
             </Link>
           </div>
 
-          <ul role="list" className="mt-14 grid gap-7 md:grid-cols-3">
+          <ul role="list" className="mt-10 grid gap-5 md:grid-cols-3">
             {SUITES.map((s) => (
               <li
                 key={s.title}
-                className="group flex h-full flex-col gap-6 rounded-2xl bg-white p-8 ring-1 ring-outline-soft shadow-card transition-shadow motion-reduce:transition-none hover:shadow-card-hover sm:p-10"
+                className="group flex h-full flex-col gap-4 rounded-2xl bg-white p-6 ring-1 ring-outline-soft shadow-card transition-shadow motion-reduce:transition-none hover:shadow-card-hover sm:p-7"
               >
-                <span className="grid size-14 place-items-center rounded-xl bg-navy/5 text-navy">
+                <span className="grid size-11 place-items-center rounded-xl bg-navy/5 text-navy">
                   {s.icon}
                 </span>
                 <div>
-                  <h3 className="font-headline text-3xl font-semibold leading-snug text-navy-dark">
+                  <h3 className="font-headline text-xl font-semibold leading-snug text-navy-dark">
                     {s.title}
                   </h3>
-                  <p className="mt-4 text-lg leading-relaxed text-ink-muted">
+                  <p className="mt-2 text-[15px] leading-relaxed text-ink-muted">
                     {s.description}
                   </p>
                 </div>
                 <Link
                   to="/services"
-                  className="focus-ring-gold mt-auto inline-flex items-center gap-1.5 self-start rounded-md text-base font-semibold text-navy hover:text-navy-dark"
+                  className="focus-ring-gold mt-auto inline-flex items-center gap-1.5 self-start rounded-md text-sm font-semibold text-navy hover:text-navy-dark"
                 >
                   Learn more
                   <ArrowRight className="size-4 transition-transform motion-reduce:transition-none group-hover:translate-x-0.5" />
@@ -118,21 +118,21 @@ export function HomePage() {
 
       <section
         aria-labelledby="philosophy-preview-heading"
-        className="bg-surface-muted/60 py-24 sm:py-28 lg:py-32"
+        className="bg-surface-muted/60 py-16 sm:py-20 lg:py-24"
       >
         <div className="container-page">
-          <div className="grid items-start gap-14 lg:grid-cols-12 lg:gap-20">
+          <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
-              <p className="text-base font-semibold uppercase tracking-[0.18em] text-navy">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-navy">
                 How we think
               </p>
               <h2
                 id="philosophy-preview-heading"
-                className="mt-4 text-balance text-5xl font-bold tracking-tight text-navy-dark sm:text-6xl lg:text-7xl"
+                className="mt-3 text-balance text-3xl font-bold tracking-tight text-navy-dark sm:text-4xl lg:text-5xl"
               >
                 Three principles. Every recommendation.
               </h2>
-              <p className="mt-7 text-xl leading-relaxed text-ink-muted sm:text-2xl">
+              <p className="mt-5 text-base leading-relaxed text-ink-muted sm:text-lg">
                 Wealth that compounds quietly across decades is a discipline,
                 not a hunch. These are the rules we live by.
               </p>
@@ -141,30 +141,30 @@ export function HomePage() {
                 className={buttonClasses({
                   variant: 'secondary',
                   size: 'lg',
-                  className: 'mt-10',
+                  className: 'mt-7',
                 })}
               >
                 Read our methodology
                 <ArrowRight className="size-4" />
               </Link>
             </div>
-            <ul role="list" className="flex flex-col gap-5 lg:col-span-7">
+            <ul role="list" className="flex flex-col gap-4 lg:col-span-7">
               {PRINCIPLES.map((p, i) => (
                 <li
                   key={p.title}
-                  className="flex gap-6 rounded-2xl bg-white p-7 ring-1 ring-outline-soft shadow-card sm:p-8"
+                  className="flex gap-4 rounded-2xl bg-white p-5 ring-1 ring-outline-soft shadow-card sm:p-6"
                 >
-                  <span className="grid size-14 shrink-0 place-items-center rounded-xl bg-gold/15 text-navy-dark">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-gold/15 text-navy-dark">
                     {p.icon}
                   </span>
                   <div className="flex-1">
-                    <p className="font-headline text-sm font-bold tracking-wide text-gold">
+                    <p className="font-headline text-xs font-bold tracking-wide text-gold">
                       0{i + 1}
                     </p>
-                    <h3 className="mt-1 font-headline text-2xl font-semibold text-navy-dark">
+                    <h3 className="mt-1 font-headline text-lg font-semibold text-navy-dark">
                       {p.title}
                     </h3>
-                    <p className="mt-3 text-lg leading-relaxed text-ink-muted">
+                    <p className="mt-2 text-[15px] leading-relaxed text-ink-muted">
                       {p.description}
                     </p>
                   </div>

@@ -33,44 +33,44 @@ export function Footer() {
         Footer and regulatory information
       </h2>
 
-      <div className="container-page py-16 sm:py-20">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
+      <div className="container-page py-12 sm:py-14">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <Link
               to="/"
               className="focus-ring-gold inline-flex items-center"
               aria-label="SRG Happy Living Financial Services, back to home"
             >
-              <span className="inline-block rounded-xl bg-white p-3 ring-1 ring-white/15 shadow-elevated">
+              <span className="inline-block rounded-xl bg-white p-2.5 ring-1 ring-white/15 shadow-elevated">
                 <img
                   src="/logo.png"
                   alt="SRG Happy Living Financial Services"
-                  className="block h-20 w-auto"
-                  width={400}
-                  height={280}
+                  className="block h-14 w-auto"
+                  width={320}
+                  height={224}
                 />
               </span>
             </Link>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-white/70">
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
               A SEBI-registered investment advisory crafting calm,
               evidence-based wealth strategies that compound across decades.
             </p>
-            <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm font-semibold uppercase tracking-[0.12em] text-gold ring-1 ring-white/10">
+            <p className="mt-5 inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-gold ring-1 ring-white/10">
               <span className="size-1.5 rounded-full bg-gold" aria-hidden />
               Compliant since 2014
             </p>
           </div>
 
           <div className="lg:col-span-3">
-            <h3 className="font-headline text-base font-semibold uppercase tracking-[0.14em] text-white/85">
+            <h3 className="font-headline text-sm font-semibold uppercase tracking-[0.14em] text-white/85">
               Regulatory Info
             </h3>
-            <ul className="mt-5 flex flex-col gap-3">
+            <ul className="mt-4 flex flex-col gap-2.5">
               {REGULATORY.map((item) => (
                 <li key={item.label}>
                   <Link
                     to={item.to}
-                    className="focus-ring-gold inline-block rounded-sm text-base text-white/70 hover:text-white"
+                    className="focus-ring-gold inline-block rounded-sm text-sm text-white/70 hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -80,15 +80,15 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="font-headline text-base font-semibold uppercase tracking-[0.14em] text-white/85">
+            <h3 className="font-headline text-sm font-semibold uppercase tracking-[0.14em] text-white/85">
               Company
             </h3>
-            <ul className="mt-5 flex flex-col gap-3">
+            <ul className="mt-4 flex flex-col gap-2.5">
               {COMPANY.map((item) => (
                 <li key={item.label}>
                   <Link
                     to={item.to}
-                    className="focus-ring-gold inline-block rounded-sm text-base text-white/70 hover:text-white"
+                    className="focus-ring-gold inline-block rounded-sm text-sm text-white/70 hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -98,10 +98,10 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="font-headline text-base font-semibold uppercase tracking-[0.14em] text-white/85">
+            <h3 className="font-headline text-sm font-semibold uppercase tracking-[0.14em] text-white/85">
               Location
             </h3>
-            <address className="mt-5 not-italic text-base leading-relaxed text-white/70">
+            <address className="mt-4 not-italic text-sm leading-relaxed text-white/70">
               {LOCATION.map((line) => (
                 <span key={line} className="block">
                   {line}
@@ -113,7 +113,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-page flex flex-col gap-3 py-7 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between">
+        <div className="container-page flex flex-col gap-3 py-6 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} SRG Happy Living Advisory Pvt. Ltd. All rights reserved.
           </p>

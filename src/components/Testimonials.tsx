@@ -40,20 +40,20 @@ export function Testimonials() {
     <section
       id="testimonials"
       aria-labelledby="testimonials-heading"
-      className="bg-surface py-20 sm:py-24 lg:py-28"
+      className="bg-surface py-16 sm:py-20"
     >
       <div className="container-page">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-base font-semibold uppercase tracking-[0.2em] text-navy">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-navy">
             Trusted Voices
           </p>
           <h2
             id="testimonials-heading"
-            className="mt-4 text-balance text-5xl font-bold tracking-tight text-navy-dark sm:text-6xl lg:text-7xl"
+            className="mt-3 text-balance text-3xl font-bold tracking-tight text-navy-dark sm:text-4xl lg:text-5xl"
           >
             The Investor's Voice
           </h2>
-          <p className="mt-6 text-xl leading-relaxed text-ink-muted sm:text-2xl">
+          <p className="mt-4 text-base leading-relaxed text-ink-muted sm:text-lg">
             Real stories from clients who entrusted their financial journey to
             our advisory.
           </p>
@@ -61,11 +61,11 @@ export function Testimonials() {
 
         <ul
           role="list"
-          className="mt-14 grid gap-8 md:grid-cols-3"
+          className="mt-10 grid gap-6 md:grid-cols-3"
         >
           {TESTIMONIALS.map((t) => (
             <li key={t.name}>
-              <figure className="flex h-full flex-col gap-7 rounded-2xl bg-white p-8 ring-1 ring-outline-soft shadow-card sm:p-10">
+              <figure className="flex h-full flex-col gap-5 rounded-2xl bg-white p-6 ring-1 ring-outline-soft shadow-card sm:p-7">
                 <div
                   className="flex items-center gap-1 text-gold"
                   aria-label={`Rated ${t.rating} out of 5 stars`}
@@ -74,29 +74,29 @@ export function Testimonials() {
                     <Star
                       key={i}
                       className={[
-                        'size-6',
+                        'size-5',
                         i < t.rating ? 'text-gold' : 'text-outline-soft',
                       ].join(' ')}
                     />
                   ))}
                 </div>
                 <blockquote className="flex-1">
-                  <p className="text-xl leading-relaxed text-ink">
+                  <p className="text-base leading-relaxed text-ink">
                     {t.quote}
                   </p>
                 </blockquote>
-                <figcaption className="flex items-center gap-4 border-t border-outline-soft pt-6">
+                <figcaption className="flex items-center gap-3 border-t border-outline-soft pt-4">
                   <span
-                    className="grid size-14 place-items-center rounded-full bg-navy/10 font-headline text-lg font-bold text-navy-dark"
+                    className="grid size-11 place-items-center rounded-full bg-navy/10 font-headline text-sm font-bold text-navy-dark"
                     aria-hidden="true"
                   >
                     {t.initials}
                   </span>
                   <div>
-                    <p className="font-headline text-lg font-semibold text-navy-dark">
+                    <p className="font-headline text-base font-semibold text-navy-dark">
                       {t.name}
                     </p>
-                    <p className="text-base text-ink-muted">{t.role}</p>
+                    <p className="text-sm text-ink-muted">{t.role}</p>
                   </div>
                 </figcaption>
               </figure>

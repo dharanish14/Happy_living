@@ -9,23 +9,23 @@ export function AdvisorySuites() {
       className="bg-surface py-20 sm:py-24"
     >
       <div className="container-page">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-base font-semibold uppercase tracking-[0.18em] text-navy">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-navy">
             Our Suites
           </p>
           <h2
             id="advisory-heading"
-            className="mt-4 text-balance text-5xl font-bold tracking-tight text-navy-dark sm:text-6xl lg:text-7xl"
+            className="mt-3 text-balance text-3xl font-bold tracking-tight text-navy-dark sm:text-4xl lg:text-5xl"
           >
             Strategic Advisory Suites
           </h2>
-          <p className="mt-5 text-xl leading-relaxed text-ink-muted sm:text-2xl">
+          <p className="mt-4 text-base leading-relaxed text-ink-muted sm:text-lg">
             Bespoke financial solutions tailored to the sophisticated needs of
             modern investors and high-net-worth individuals.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:gap-7 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
+        <div className="mt-10 grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
           <FeatureCard
             highlighted
             className="lg:row-span-2"
@@ -119,19 +119,19 @@ function FeatureCard({
             {icon}
           </span>
 
-          <h3 className="font-headline text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[40px]">
+          <h3 className="font-headline text-2xl font-bold leading-tight text-white sm:text-3xl">
             {title}
           </h3>
 
-          <p className="text-lg leading-relaxed text-white/75 lg:text-xl">
+          <p className="text-base leading-relaxed text-white/75">
             {description}
           </p>
         </div>
 
-        <div className="relative mt-auto pt-8">
+        <div className="relative mt-auto pt-7">
           <Link
             to="/contact"
-            className="focus-ring-gold inline-flex items-center gap-2 rounded-[var(--radius-button)] bg-gold px-6 py-3 text-base font-semibold text-navy-dark transition-transform motion-reduce:transition-none hover:-translate-y-0.5"
+            className="focus-ring-gold inline-flex items-center gap-2 rounded-[var(--radius-button)] bg-gold px-5 py-2.5 text-sm font-semibold text-navy-dark transition-transform motion-reduce:transition-none hover:-translate-y-0.5"
           >
             {ctaLabel}
             <ArrowRight className="size-4" />
@@ -155,16 +155,16 @@ function FeatureCard({
         {visual ?? null}
       </div>
       <div className="flex flex-1 flex-col gap-3">
-        <h3 className="font-headline text-2xl font-semibold leading-snug text-navy-dark sm:text-[26px]">
+        <h3 className="font-headline text-xl font-semibold leading-snug text-navy-dark">
           {title}
         </h3>
-        <p className="text-lg leading-relaxed text-ink-muted">
+        <p className="text-[15px] leading-relaxed text-ink-muted">
           {description}
         </p>
       </div>
       <Link
         to="/contact"
-        className="focus-ring-gold mt-auto inline-flex items-center gap-1.5 self-start rounded-md text-base font-semibold text-navy hover:text-navy-dark"
+        className="focus-ring-gold mt-auto inline-flex items-center gap-1.5 self-start rounded-md text-sm font-semibold text-navy hover:text-navy-dark"
       >
         {ctaLabel}
         <ArrowRight className="size-4 transition-transform motion-reduce:transition-none group-hover:translate-x-0.5" />

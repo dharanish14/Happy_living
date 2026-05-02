@@ -40,19 +40,19 @@ export function Header() {
           : 'border-transparent bg-surface',
       ].join(' ')}
     >
-      <div className="container-page flex h-24 items-center justify-between gap-6 sm:h-28 lg:h-32">
+      <div className="container-page flex h-20 items-center justify-between gap-6 sm:h-24 lg:h-28">
         <Link
           to="/"
           className="focus-ring-gold mr-auto inline-flex shrink-0 items-center"
           aria-label="SRG Happy Living Financial Services, home"
         >
-          <span className="inline-flex items-center justify-center rounded-xl bg-white px-3 py-2 ring-1 ring-outline-soft shadow-card sm:px-4 sm:py-2.5">
+          <span className="inline-flex items-center justify-center rounded-xl bg-white px-2.5 py-1.5 ring-1 ring-outline-soft shadow-card sm:px-3 sm:py-2">
             <img
               src="/logo.png"
               alt="SRG Happy Living Financial Services"
-              className="block h-14 w-auto sm:h-16 lg:h-20 xl:h-24"
-              width={400}
-              height={280}
+              className="block h-12 w-auto sm:h-14 lg:h-16 xl:h-20"
+              width={320}
+              height={224}
             />
           </span>
         </Link>
