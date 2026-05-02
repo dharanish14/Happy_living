@@ -38,10 +38,10 @@ export function ContactPage() {
                 Mon–Fri, 9:30 AM – 6:30 PM IST
               </p>
               <a
-                href="tel:+919800000000"
+                href="tel:+919035083452"
                 className="focus-ring-gold mt-3 inline-block rounded-sm py-1 font-headline text-base font-semibold text-navy hover:text-navy-dark"
               >
-                +91 98000 00000
+                +91 90350 83452
               </a>
             </li>
             <li className="rounded-2xl bg-white p-6 ring-1 ring-outline-soft shadow-card sm:p-7">
@@ -55,10 +55,10 @@ export function ContactPage() {
                 Replies within one business day
               </p>
               <a
-                href="mailto:advisor@srghappyliving.com"
+                href="mailto:sameersakurikar@yahoo.com"
                 className="focus-ring-gold mt-3 inline-block break-all rounded-sm py-1 font-headline text-base font-semibold text-navy hover:text-navy-dark"
               >
-                advisor@srghappyliving.com
+                sameersakurikar@yahoo.com
               </a>
             </li>
             <li className="rounded-2xl bg-white p-6 ring-1 ring-outline-soft shadow-card sm:p-7">
@@ -72,9 +72,9 @@ export function ContactPage() {
                 By prior appointment only
               </p>
               <p className="mt-3 font-headline text-base font-semibold text-navy">
-                14 Brigade Square, MG Road
+                A2-201, Paramount Pilatus, Arekere
                 <br />
-                Bengaluru 560001
+                Off Bannergatta Road, Bengaluru 560076
               </p>
             </li>
           </ul>
@@ -133,6 +133,7 @@ export function ContactPage() {
                   href="https://www.openstreetmap.org/copyright"
                   target="_blank"
                   rel="noreferrer noopener"
+                  aria-label="OpenStreetMap contributors, opens in new window"
                   className="focus-ring-gold inline-block font-medium underline-offset-4 hover:underline"
                 >
                   © OpenStreetMap contributors

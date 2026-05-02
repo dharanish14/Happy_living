@@ -10,64 +10,78 @@ const PROCESS = [
     step: '01',
     title: 'Discovery',
     description:
-      'A confidential conversation to understand your goals, obligations, and current portfolio. No paperwork, no pressure.',
+      'A confidential conversation to understand your goals, income, expenses, and existing portfolio. No paperwork, no pressure.',
   },
   {
     step: '02',
-    title: 'Risk profiling',
+    title: 'Health Assessment',
     description:
-      'Quantitative risk-tolerance scoring and capacity analysis, calibrated against your time horizon and life stage.',
+      'We project your current financial standing into the future and run Monte Carlo simulations across thousands of scenarios to establish a clear success-rate for each of your goals.',
   },
   {
     step: '03',
-    title: 'Architecture',
+    title: 'Custom Roadmap',
     description:
-      'A written investment policy statement with target allocations, rebalancing rules, and tax-aware withdrawal plans.',
+      'A written financial plan with target allocations, the right instruments, consolidation strategy, and tax-aware withdrawal modelling for retirement.',
   },
   {
     step: '04',
-    title: 'Stewardship',
+    title: 'Yearly Review',
     description:
-      'Quarterly reviews, annual deep-dives, and proactive course-correction when life or markets change.',
+      'Annual deep-dives to rebalance, realign, and course-correct as markets and your life circumstances evolve.',
   },
 ]
 
 const FEES = [
   {
-    name: 'Foundation',
-    price: '₹50,000',
-    cadence: 'per year',
-    description: 'For investors building toward their first ₹1 Cr.',
+    name: 'Portfolio Scan',
+    price: '₹5,000',
+    cadence: '+ GST · one-time',
+    description: 'A quick scan of your existing investments with instrument-level suggestions.',
     features: [
-      'Annual investment policy statement',
-      'Two formal review meetings',
-      'Email & WhatsApp support',
-      'Basic tax planning',
+      'Review of existing investment instruments',
+      'Suitability check against your goals',
+      'Instrument change suggestions',
+      'Consolidation recommendations',
     ],
   },
   {
-    name: 'Architect',
-    price: '0.50%',
-    cadence: 'of advisable assets',
-    description: 'For HNIs with ₹1 Cr+ in investable wealth.',
+    name: 'Financial Health Check',
+    price: '₹5,000',
+    cadence: '+ GST · one-time',
+    description: 'Deep-dive into your portfolio with Monte Carlo success-rate modelling.',
     features: [
-      'Quarterly portfolio reviews',
-      'Goal-based scenario modelling',
-      'Direct access to your principal advisor',
-      'Tax & estate coordination',
+      'Analysis of investments & horizon',
+      'Income & expense mapping',
+      'Goal-wise success-rate assessment',
+      'Monte Carlo simulation report',
+    ],
+  },
+  {
+    name: 'Complete Financial Plan',
+    price: '₹15,000',
+    cadence: '+ GST · first year',
+    description: 'End-to-end financial planning with yearly follow-up at ₹8,000/year.',
+    features: [
+      'Goal setting with timelines',
+      'Instrument selection & allocation',
+      'Accumulation & withdrawal plan',
+      'Tax planning',
+      'Yearly review @ ₹8,000 + GST',
     ],
     featured: true,
   },
   {
-    name: 'Family Office',
-    price: 'Custom',
-    cadence: 'engagement',
-    description: 'Multi-generational planning across ₹25 Cr+ portfolios.',
+    name: 'Plan + Estate',
+    price: '₹25,000',
+    cadence: '+ GST · first year',
+    description: 'Complete financial planning plus estate & succession planning. Yearly follow-up at ₹8,000/year.',
     features: [
-      'Dedicated advisory pod',
-      'Trust & succession structuring',
-      'Alternative investments access',
-      'Concierge reporting',
+      'Everything in Complete Plan',
+      'Succession & will preparation',
+      'Legacy transfer structuring',
+      'Multi-generational wealth guidance',
+      'Yearly review @ ₹8,000 + GST',
     ],
   },
 ]
@@ -77,8 +91,8 @@ export function ServicesPage() {
     <>
       <PageHeader
         eyebrow="What We Do"
-        title="Strategic advisory, end to end."
-        description="From the first discovery call to the quarterly review a decade in, every engagement follows the same disciplined architecture — only the inputs change."
+        title="Holistic financial advisory, end to end."
+        description="From a comprehensive financial health check to multi-generational estate planning — every engagement follows the same disciplined process. Only the inputs change."
       >
         <div className="flex flex-wrap gap-3">
           <Link to="/contact" className={buttonClasses({ size: 'lg' })}>
@@ -161,7 +175,7 @@ export function ServicesPage() {
             </p>
           </div>
 
-          <ul role="list" className="mt-12 grid gap-6 md:grid-cols-3">
+          <ul role="list" className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {FEES.map((tier) => (
               <li
                 key={tier.name}

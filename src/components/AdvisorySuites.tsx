@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, ChartBars, Compass, ShieldCheck, Sparkline } from './ui/Icon'
+import { ArrowRight, Brain, ChartBars, Compass, ShieldCheck } from './ui/Icon'
 
 export function AdvisorySuites() {
   return (
@@ -11,17 +11,17 @@ export function AdvisorySuites() {
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-navy">
-            Our Suites
+            Our Services
           </p>
           <h2
             id="advisory-heading"
             className="mt-3 text-balance text-3xl font-bold tracking-tight text-navy-dark sm:text-4xl lg:text-5xl"
           >
-            Strategic Advisory Suites
+            Holistic financial advisory, end to end.
           </h2>
           <p className="mt-4 text-base leading-8 text-ink-muted sm:text-lg">
-            Bespoke financial solutions tailored to the sophisticated needs of
-            modern investors and high-net-worth individuals.
+            From a comprehensive financial health check to multi-generational
+            estate planning — we cover every stage of your wealth journey.
           </p>
         </div>
 
@@ -29,39 +29,39 @@ export function AdvisorySuites() {
           <FeatureCard
             highlighted
             className="lg:row-span-2"
-            eyebrow="Flagship"
+            eyebrow="Start Here"
             icon={<Compass className="size-5" />}
-            title="Personalized Portfolio Management"
-            description="Dynamic asset-allocation strategies that evolve with market conditions, while remaining anchored to your risk profile and life goals."
-            ctaLabel="Explore strategy"
+            title="Financial Health Assessment"
+            description="We take a comprehensive snapshot of your current financial standing and project it into the future using Monte Carlo simulations — giving you a clear success-rate for each of your goals before a single rupee is moved."
+            ctaLabel="Get your health check"
+          />
+
+          <FeatureCard
+            icon={<ChartBars className="size-5" />}
+            title="Wealth Planning & Management"
+            description="A custom roadmap from today's portfolio to your target milestones. We select the right instruments, optimise asset allocation, and conduct yearly reviews to keep you precisely on track."
+            ctaLabel="Build your roadmap"
+          />
+
+          <FeatureCard
+            icon={<Brain className="size-5" />}
+            title="Asset Management"
+            description="Disciplined execution: capital is allocated to the right asset classes from day one, with regular rebalancing and active management to capture market opportunities."
+            ctaLabel="Learn more"
           />
 
           <FeatureCard
             icon={<ShieldCheck className="size-5" />}
             title="Retirement Planning"
-            description="Preserving your lifestyle with tax-efficient income strategies and inflation-resilient withdrawal frameworks."
-            ctaLabel="Learn more"
+            description="Define your retirement vision, optimise the accumulation phase, and transition with sophisticated withdrawal models tailored to your risk appetite — so capital keeps growing while income stays steady."
+            ctaLabel="Plan your retirement"
           />
 
           <FeatureCard
             icon={<TransferIcon />}
-            title="Wealth Transfer"
-            description="Multi-generational planning, trust structures and estate guidance tailored for legacy continuity."
-            ctaLabel="Learn more"
-          />
-
-          <FeatureCard
-            className="md:col-span-2 lg:col-span-1"
-            icon={<ChartBars className="size-5" />}
-            title="Equity Advisory"
-            description="Research-backed analysis and a thematic investing approach curated for high-growth potential investing cycles."
-            ctaLabel="Learn more"
-            visual={
-              <Sparkline
-                className="h-12 w-32 text-success"
-                title="Sample equity advisory growth trend"
-              />
-            }
+            title="Estate Planning"
+            description="Succession, will preparation, and legacy structuring handled with respect and precision — ensuring a seamless transfer of wealth and total peace of mind for you and your loved ones."
+            ctaLabel="Secure your legacy"
           />
         </div>
       </div>

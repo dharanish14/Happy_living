@@ -1,20 +1,32 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { buttonClasses } from './ui/buttonStyles'
-import { Close, Menu } from './ui/Icon'
+import { ChevronDown, Close, Menu } from './ui/Icon'
 
 const NAV_LINKS = [
   { to: '/', label: 'Home', end: true },
-  { to: '/about', label: 'About' },
+  { to: '/vision-mission', label: 'Vision & Mission' },
   { to: '/services', label: 'Services' },
-  { to: '/disclosures', label: 'SEBI Disclosures' },
+  { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
+]
+
+const CHARTER_SECTIONS = [
+  { hash: 'dos-donts', label: "Do's and Don'ts for Investors" },
+  { hash: 'business-details', label: 'Business Transacted' },
+  { hash: 'services-details', label: 'Services Provided' },
+  { hash: 'grievance', label: 'Grievance Redressal' },
+  { hash: 'rights', label: 'Rights of Investors' },
+  { hash: 'complaints', label: 'Complaints Data' },
 ]
 
 export function Header() {
   const [open, setOpen] = useState(false)
+  const [charterOpen, setCharterOpen] = useState(false)
+  const [mobileCharterOpen, setMobileCharterOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { pathname, hash } = useLocation()
+  const dropdownRef = useRef<HTMLLIElement>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -32,7 +44,19 @@ export function Header() {
 
   useEffect(() => {
     setOpen(false)
+    setMobileCharterOpen(false)
   }, [pathname, hash])
+
+  // Close desktop dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setCharterOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   const closeMenu = () => setOpen(false)
 
@@ -92,6 +116,63 @@ export function Header() {
                 </NavLink>
               </li>
             ))}
+
+            {/* Investor Charter dropdown */}
+            <li ref={dropdownRef} className="relative">
+              <button
+                type="button"
+                onClick={() => setCharterOpen((v) => !v)}
+                aria-haspopup="true"
+                aria-expanded={charterOpen}
+                className={[
+                  'focus-ring-gold relative inline-flex min-h-11 items-center gap-1.5 rounded-md px-4 py-2 text-[15px] font-medium transition-colors motion-reduce:transition-none lg:text-base',
+                  pathname === '/investment-charter'
+                    ? 'text-navy-dark'
+                    : 'text-ink-muted hover:bg-surface-muted hover:text-navy',
+                ].join(' ')}
+              >
+                Investor Charter
+                <ChevronDown
+                  className={[
+                    'size-4 transition-transform duration-200',
+                    charterOpen ? 'rotate-180' : '',
+                  ].join(' ')}
+                />
+                {pathname === '/investment-charter' && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute bottom-1.5 left-3.5 right-3.5 h-0.5 rounded-full bg-gold"
+                  />
+                )}
+              </button>
+
+              {charterOpen && (
+                <div className="absolute left-0 top-full z-50 mt-1.5 w-64 overflow-hidden rounded-xl border border-outline-soft bg-white py-1.5 shadow-elevated">
+                  <div className="border-b border-outline-soft px-4 pb-2 pt-2.5">
+                    <Link
+                      to="/investment-charter"
+                      onClick={() => setCharterOpen(false)}
+                      className="text-xs font-semibold uppercase tracking-[0.14em] text-navy hover:text-navy-dark"
+                    >
+                      Investor Charter →
+                    </Link>
+                  </div>
+                  <ul className="mt-1">
+                    {CHARTER_SECTIONS.map((s) => (
+                      <li key={s.hash}>
+                        <Link
+                          to={`/investment-charter#${s.hash}`}
+                          onClick={() => setCharterOpen(false)}
+                          className="flex min-h-10 items-center px-4 py-2 text-sm text-ink-muted hover:bg-surface-muted hover:text-navy"
+                        >
+                          {s.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </li>
           </ul>
         </nav>
 
@@ -139,6 +220,53 @@ export function Header() {
                 </NavLink>
               </li>
             ))}
+
+            {/* Mobile: Investor Charter accordion */}
+            <li>
+              <button
+                type="button"
+                onClick={() => setMobileCharterOpen((v) => !v)}
+                className={[
+                  'focus-ring-gold flex min-h-12 w-full items-center justify-between rounded-lg px-4 py-3 text-base font-medium hover:bg-surface-muted hover:text-navy',
+                  pathname === '/investment-charter'
+                    ? 'bg-surface-muted text-navy-dark ring-1 ring-outline-soft'
+                    : 'text-ink',
+                ].join(' ')}
+              >
+                Investor Charter
+                <ChevronDown
+                  className={[
+                    'size-5 transition-transform duration-200',
+                    mobileCharterOpen ? 'rotate-180' : '',
+                  ].join(' ')}
+                />
+              </button>
+              {mobileCharterOpen && (
+                <ul className="ml-4 mt-1 flex flex-col gap-0.5 border-l-2 border-gold/40 pl-3">
+                  <li>
+                    <Link
+                      to="/investment-charter"
+                      onClick={closeMenu}
+                      className="flex min-h-10 items-center rounded-md px-3 py-2 text-sm font-semibold text-navy hover:bg-surface-muted"
+                    >
+                      View full page →
+                    </Link>
+                  </li>
+                  {CHARTER_SECTIONS.map((s) => (
+                    <li key={s.hash}>
+                      <Link
+                        to={`/investment-charter#${s.hash}`}
+                        onClick={closeMenu}
+                        className="flex min-h-10 items-center rounded-md px-3 py-2 text-sm text-ink-muted hover:bg-surface-muted hover:text-navy"
+                      >
+                        {s.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+
             <li className="mt-3">
               <Link
                 to="/contact"

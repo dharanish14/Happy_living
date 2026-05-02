@@ -12,21 +12,21 @@ type Principle = {
 const PRINCIPLES: Principle[] = [
   {
     icon: <Compass className="size-4.5" />,
-    title: 'Unbiased Fiduciary Duty',
+    title: 'Fiduciary Duty & Transparency',
     description:
-      'As a SEBI-registered advisory, our only loyalty is to your portfolio performance. Zero commissions, zero hidden agendas.',
+      'As a SEBI-registered investment adviser, our only loyalty is to your financial well-being. Zero commissions. Every fee disclosed. Every conflict surfaced upfront.',
   },
   {
     icon: <Brain className="size-4.5" />,
-    title: 'Behavioural Coaching',
+    title: 'LEAN Approach to Personal Finance',
     description:
-      'We guide you through market volatility, preventing emotional decisions that compromise long-term compounding.',
+      'We apply LEAN principles, Value Engineering, and Consolidation — tools proven in world-class manufacturing — to simplify and strengthen your personal finances.',
   },
   {
     icon: <Check className="size-4.5" />,
-    title: 'Scientific Asset Allocation',
+    title: 'Personalised, Written Plans',
     description:
-      'Utilising Modern Portfolio Theory and quantitative analysis, we optimise risk-adjusted returns across every market cycle.',
+      'Every client receives a written plan specific to their income, goals, and timeline — and a yearly review to realign as life and markets evolve.',
   },
 ]
 
@@ -88,12 +88,12 @@ export function Philosophy() {
                 id="philosophy-heading"
                 className="text-3xl font-bold tracking-tight text-navy-dark sm:text-4xl lg:text-5xl"
               >
-                The Philosophy of Precise Growth
+                Our Philosophy of Precise Growth
               </h2>
               <p className="text-base leading-8 text-ink-muted sm:text-lg">
-                Three principles guide every recommendation we make — anchoring
-                long-term wealth creation in evidence, discipline and your
-                personal context.
+                Three principles guide every recommendation — anchoring
+                long-term wealth creation in fiduciary ethics, analytical
+                discipline, and your personal context.
               </p>
             </div>
 

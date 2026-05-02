@@ -4,11 +4,11 @@ import { ArrowRight, Mail, Phone, ShieldCheck } from '../components/ui/Icon'
 
 const REGISTRATION = [
   { label: 'SEBI Registration No.', value: 'INA000000000' },
-  { label: 'Type of Registration', value: 'Non-Individual Investment Adviser' },
-  { label: 'Validity', value: 'Perpetual (renewed Mar 2024)' },
-  { label: 'BASL Membership No.', value: 'BASL-1234' },
-  { label: 'Principal Officer', value: 'Sanjay R. Gupta, CFA' },
-  { label: 'Compliance Officer', value: 'Aanya Kapoor' },
+  { label: 'Type of Registration', value: 'Individual Investment Adviser' },
+  { label: 'Validity', value: 'Perpetual' },
+  { label: 'Principal Officer', value: 'Sameer Sakurikar' },
+  { label: 'Phone', value: '+91 90350 83452' },
+  { label: 'Email', value: 'sameersakurikar@yahoo.com' },
 ]
 
 const DOCUMENTS = [
@@ -50,19 +50,55 @@ const DOCUMENTS = [
   },
 ]
 
-const COMPLAINT_STATS = [
-  { label: 'Complaints pending (start of month)', value: '0' },
-  { label: 'Received during month', value: '0' },
-  { label: 'Resolved during month', value: '0' },
-  { label: 'Pending (end of month)', value: '0' },
+const COMPLAINT_DISCLOSURE_ROWS = [
+  {
+    srNo: '1',
+    receivedFrom: 'Directly from Investors',
+    pendingLastMonth: 'NA',
+    received: 'NA',
+    resolved: 'NA',
+    totalPending: 'NA',
+    pendingGt3Months: 'NA',
+    avgResolutionDays: 'NA',
+  },
+  {
+    srNo: '2',
+    receivedFrom: 'SEBI (SCORES)',
+    pendingLastMonth: 'NA',
+    received: 'NA',
+    resolved: 'NA',
+    totalPending: 'NA',
+    pendingGt3Months: 'NA',
+    avgResolutionDays: 'NA',
+  },
+  {
+    srNo: '3',
+    receivedFrom: 'Other Sources (if any)',
+    pendingLastMonth: 'NA',
+    received: 'NA',
+    resolved: 'NA',
+    totalPending: 'NA',
+    pendingGt3Months: 'NA',
+    avgResolutionDays: 'NA',
+  },
+  {
+    srNo: '',
+    receivedFrom: 'Grand Total',
+    pendingLastMonth: 'NA',
+    received: 'NA',
+    resolved: 'NA',
+    totalPending: 'NA',
+    pendingGt3Months: 'NA',
+    avgResolutionDays: 'NA',
+  },
 ]
 
 export function DisclosuresPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Regulatory"
-        title="SEBI disclosures & investor information."
+        eyebrow="Investor Charter"
+        title="Investor Charter and regulatory information."
         description="Full transparency on our registration, fees, complaint mechanism, and the documents that govern every advisory relationship we hold."
       >
         <p className="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-navy ring-1 ring-outline-soft shadow-card">
@@ -88,7 +124,7 @@ export function DisclosuresPage() {
                 Our SEBI registration details.
               </h2>
               <p className="mt-4 text-base leading-relaxed text-ink-muted">
-                SRG Happy Living Advisory Pvt. Ltd. is a non-individual
+                SRG Happy Living Financial Services is an individual
                 Investment Adviser registered with SEBI under the Investment
                 Advisers Regulations, 2013.
               </p>
@@ -195,10 +231,10 @@ export function DisclosuresPage() {
                     <Mail className="size-4" />
                   </span>
                   <a
-                    href="mailto:compliance@srghappyliving.com"
+                    href="mailto:sameersakurikar@yahoo.com"
                     className="focus-ring-gold inline-block break-all font-headline text-sm font-semibold text-navy-dark hover:text-navy"
                   >
-                    compliance@srghappyliving.com
+                    sameersakurikar@yahoo.com
                   </a>
                 </li>
                 <li className="flex items-start gap-3">
@@ -206,10 +242,10 @@ export function DisclosuresPage() {
                     <Phone className="size-4" />
                   </span>
                   <a
-                    href="tel:+919800000001"
+                    href="tel:+919035083452"
                     className="focus-ring-gold inline-block font-headline text-sm font-semibold text-navy-dark hover:text-navy"
                   >
-                    +91 98000 00001
+                    +91 90350 83452
                   </a>
                 </li>
               </ul>
@@ -220,6 +256,7 @@ export function DisclosuresPage() {
                   href="https://scores.sebi.gov.in"
                   target="_blank"
                   rel="noreferrer noopener"
+                  aria-label="SEBI SCORES portal, opens in new window"
                   className="focus-ring-gold inline-block font-semibold text-navy underline-offset-4 hover:underline"
                 >
                   scores.sebi.gov.in
@@ -229,31 +266,48 @@ export function DisclosuresPage() {
 
             <div className="lg:col-span-7">
               <div className="overflow-hidden rounded-2xl bg-white ring-1 ring-outline-soft shadow-card">
-                <div className="flex items-center justify-between border-b border-outline-soft p-5 sm:p-6">
+                <div className="border-b border-outline-soft p-5 sm:p-6">
                   <h3 className="font-headline text-base font-semibold text-navy-dark">
-                    Complaint status — April 2026
+                    Formats for investors complaints data to be disclosed monthly by IAs on their website and mobile applications
                   </h3>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-success/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-success">
-                    <span className="size-1.5 rounded-full bg-success" />
-                    Up to date
-                  </span>
+                  <p className="mt-3 text-sm text-ink-muted">
+                    Data for the month ending - NA
+                  </p>
                 </div>
-                <dl className="grid grid-cols-2 gap-px bg-outline-soft sm:grid-cols-4">
-                  {COMPLAINT_STATS.map((s) => (
-                    <div key={s.label} className="bg-white p-5">
-                      <dt className="text-xs font-medium leading-snug text-ink-muted">
-                        {s.label}
-                      </dt>
-                      <dd className="mt-2 font-headline text-3xl font-bold text-navy-dark">
-                        {s.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
+                <div className="overflow-x-auto">
+                  <table className="min-w-full border-collapse text-left text-sm">
+                    <thead>
+                      <tr className="bg-surface-muted/60 text-navy-dark">
+                        <th className="border-b border-outline-soft px-3 py-3 font-semibold">Sr. No.</th>
+                        <th className="border-b border-outline-soft px-3 py-3 font-semibold">Received from</th>
+                        <th className="border-b border-outline-soft px-3 py-3 font-semibold">Pending at the end of last month</th>
+                        <th className="border-b border-outline-soft px-3 py-3 font-semibold">Received</th>
+                        <th className="border-b border-outline-soft px-3 py-3 font-semibold">Resolved</th>
+                        <th className="border-b border-outline-soft px-3 py-3 font-semibold">Total Pending</th>
+                        <th className="border-b border-outline-soft px-3 py-3 font-semibold">Pending complaints {'>'} 3 months</th>
+                        <th className="border-b border-outline-soft px-3 py-3 font-semibold">Average Resolution time (in days)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {COMPLAINT_DISCLOSURE_ROWS.map((row) => (
+                        <tr key={`${row.receivedFrom}-${row.srNo}`} className="odd:bg-white even:bg-surface/40">
+                          <td className="border-b border-outline-soft px-3 py-2.5 text-ink-muted">{row.srNo || 'NA'}</td>
+                          <td className="border-b border-outline-soft px-3 py-2.5 font-medium text-navy-dark">{row.receivedFrom}</td>
+                          <td className="border-b border-outline-soft px-3 py-2.5 text-ink-muted">{row.pendingLastMonth}</td>
+                          <td className="border-b border-outline-soft px-3 py-2.5 text-ink-muted">{row.received}</td>
+                          <td className="border-b border-outline-soft px-3 py-2.5 text-ink-muted">{row.resolved}</td>
+                          <td className="border-b border-outline-soft px-3 py-2.5 text-ink-muted">{row.totalPending}</td>
+                          <td className="border-b border-outline-soft px-3 py-2.5 text-ink-muted">{row.pendingGt3Months}</td>
+                          <td className="border-b border-outline-soft px-3 py-2.5 text-ink-muted">{row.avgResolutionDays}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
 
               <p className="mt-4 text-xs text-ink-muted">
-                Updated monthly per SEBI Circular SEBI/HO/MIRSD/MIRSD-PoD/P/CIR/2023/154.
+                Number of complaints received during month against the IA due to impersonation by some other entity: NA
               </p>
             </div>
           </div>
@@ -261,8 +315,136 @@ export function DisclosuresPage() {
       </section>
 
       <section
-        aria-labelledby="risk-heading"
+        aria-labelledby="charter-heading"
+        className="bg-surface py-20 sm:py-24"
+      >
+        <div className="container-page">
+          <div className="mx-auto max-w-4xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-navy">
+              Investor charter
+            </p>
+            <h2
+              id="charter-heading"
+              className="mt-3 text-3xl font-bold tracking-tight text-navy-dark sm:text-4xl"
+            >
+              Do's and Don'ts for investors.
+            </h2>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-ink-muted">
+              As per SEBI requirements, the following guidance helps you
+              engage safely with any registered investment adviser.
+            </p>
+
+            <div className="mt-10 grid gap-6 lg:grid-cols-2">
+              {/* Do's */}
+              <div className="rounded-2xl bg-white ring-1 ring-outline-soft shadow-card">
+                <div className="border-b border-outline-soft px-6 py-4">
+                  <h3 className="font-headline text-base font-semibold text-navy-dark">
+                    Do's for investors
+                  </h3>
+                </div>
+                <ol className="flex flex-col divide-y divide-outline-soft">
+                  {[
+                    'Always deal with SEBI registered Investment Advisers. Check for SEBI registration number at sebi.gov.in.',
+                    'Ensure that the Investment Adviser has a valid registration certificate.',
+                    'Pay only advisory fees through banking channels and maintain duly signed receipts.',
+                    'Always ask for your risk profiling before accepting investment advice.',
+                    'Ask all relevant questions and clear your doubts before acting on advice.',
+                    'Assess the risk–return profile, liquidity and safety aspects before investing.',
+                    'Insist on getting terms and conditions in writing, duly signed and stamped.',
+                    'Be vigilant in your transactions.',
+                    'Approach appropriate authorities for redressal of doubts or grievances.',
+                    'Inform SEBI about Investment Advisers offering assured or guaranteed returns.',
+                  ].map((item, i) => (
+                    <li key={i} className="flex gap-3 px-6 py-4">
+                      <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-success/15 font-headline text-[11px] font-bold text-success">
+                        {i + 1}
+                      </span>
+                      <p className="text-sm leading-6 text-ink-muted">{item}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              {/* Don'ts */}
+              <div className="rounded-2xl bg-white ring-1 ring-outline-soft shadow-card">
+                <div className="border-b border-outline-soft px-6 py-4">
+                  <h3 className="font-headline text-base font-semibold text-navy-dark">
+                    Don'ts for investors
+                  </h3>
+                </div>
+                <ol className="flex flex-col divide-y divide-outline-soft">
+                  {[
+                    'Do not deal with unregistered entities — do not go by social media follower count.',
+                    "Don't fall for stock tips offered under the pretext of investment advice.",
+                    'Do not give your money for investment to the Investment Adviser.',
+                    "Don't fall for promises of indicative, exorbitant, or assured returns.",
+                    "Don't get carried away by luring advertisements or market rumours.",
+                    'Avoid doing transactions only on the basis of phone calls or messages from any Investment Adviser.',
+                    "Don't take decisions just because of repeated messages and calls.",
+                    'Do not fall prey to limited-period discounts or other incentives offered by Investment Advisers.',
+                    "Don't rush into investments that do not match your risk appetite and goals.",
+                  ].map((item, i) => (
+                    <li key={i} className="flex gap-3 px-6 py-4">
+                      <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-error/10 font-headline text-[11px] font-bold text-error">
+                        {i + 1}
+                      </span>
+                      <p className="text-sm leading-6 text-ink-muted">{item}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="rights-heading"
         className="bg-surface-muted/60 py-20 sm:py-24"
+      >
+        <div className="container-page">
+          <div className="mx-auto max-w-4xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-navy">
+              Investor rights
+            </p>
+            <h2
+              id="rights-heading"
+              className="mt-3 text-3xl font-bold tracking-tight text-navy-dark sm:text-4xl"
+            >
+              Your rights as an investor.
+            </h2>
+            <ul role="list" className="mt-8 grid gap-3 sm:grid-cols-2">
+              {[
+                'Right to Privacy and Confidentiality',
+                'Right to Transparent Practices',
+                'Right to Fair and Equitable Treatment',
+                'Right to Adequate Information',
+                'Right to Initial and Continuing Disclosure',
+                'Right to receive information about all statutory and regulatory disclosures',
+                'Right to Awareness about Service Parameters and Turnaround Times',
+                'Right to be Heard and Satisfactory Grievance Redressal',
+                'Right to Suitability of Financial Products',
+                'Right to Exit from a financial product in accordance with the advisory agreement',
+                'Right to receive clear guidance and caution notice when dealing in complex or high-risk products',
+                'Right to access services in a suitable manner even if differently abled',
+                'Right to provide feedback on financial products and services used',
+                'Right against coercive, unfair, and one-sided clauses in financial agreements',
+              ].map((right) => (
+                <li key={right} className="flex items-start gap-3 rounded-xl bg-white p-4 ring-1 ring-outline-soft shadow-card">
+                  <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-navy/8 text-navy">
+                    <ShieldCheck className="size-3" />
+                  </span>
+                  <span className="text-sm leading-6 text-ink-muted">{right}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="risk-heading"
+        className="bg-surface py-20 sm:py-24"
       >
         <div className="container-page">
           <div className="mx-auto max-w-3xl">
@@ -275,7 +457,7 @@ export function DisclosuresPage() {
             >
               Important investor notice.
             </h2>
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-ink-muted">
+            <div className="mt-6 space-y-4 text-base leading-8 text-ink-muted">
               <p>
                 Investments in securities markets are subject to market risk.
                 Read all scheme-related documents carefully before investing.
@@ -288,10 +470,9 @@ export function DisclosuresPage() {
                 custody remain with you and your chosen broker / depository.
               </p>
               <p>
-                Registration granted by SEBI, membership of BASL, and
-                certification from NISM in no way guarantee the performance of
-                the intermediary or provide any assurance of returns to
-                investors.
+                Registration granted by SEBI in no way guarantees the
+                performance of the intermediary or provides any assurance of
+                returns to investors.
               </p>
             </div>
           </div>

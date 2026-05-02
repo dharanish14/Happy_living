@@ -355,3 +355,24 @@ export function ChartBars({ className, title, ...props }: IconProps) {
     </svg>
   )
 }
+
+export function AlertCircle({ className, title, ...props }: IconProps) {
+  return (
+    <svg
+      {...baseProps}
+      role={title ? 'img' : 'presentation'}
+      aria-hidden={title ? undefined : true}
+      className={className}
+      {...props}
+    >
+      {withTitle(
+        title,
+        <>
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 8v4" />
+          <path d="M12 16h.01" />
+        </>,
+      )}
+    </svg>
+  )
+}

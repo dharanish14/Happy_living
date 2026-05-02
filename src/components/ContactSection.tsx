@@ -1,6 +1,7 @@
 import { useId, useState, type FormEvent } from 'react'
 import { Button } from './ui/Button'
-import { CheckCircle, Mail, MapPin, Phone, ShieldCheck } from './ui/Icon'
+import { CheckCircle, Mail, MapPin, Phone, ShieldCheck, AlertCircle } from './ui/Icon'
+import { sendContactEmail } from '../services/emailService'
 
 type FormState = {
   fullName: string
@@ -30,6 +31,8 @@ export function ContactSection() {
   const [form, setForm] = useState<FormState>(INITIAL)
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({})
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
   const ids = {
     fullName: useId(),
     phone: useId(),
@@ -55,7 +58,7 @@ export function ContactSection() {
     return next
   }
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const nextErrors = validate()
     setErrors(nextErrors)
@@ -70,7 +73,41 @@ export function ContactSection() {
       }
       return
     }
-    setSubmitted(true)
+
+    setLoading(true)
+    setMessage(null)
+
+    try {
+      const result = await sendContactEmail({
+        name: form.fullName,
+        email: form.email,
+        phone: form.phone,
+        subject: `New Advisory Request: ${form.service}`,
+        message: `Service: ${form.service}\n\nMessage:\n${form.notes || '(No additional notes)'}`,
+      })
+
+      if (result.success) {
+        setMessage({
+          type: 'success',
+          text: result.message,
+        })
+        setForm(INITIAL)
+        setSubmitted(true)
+        setTimeout(() => setSubmitted(false), 5000)
+      } else {
+        setMessage({
+          type: 'error',
+          text: result.message,
+        })
+      }
+    } catch (error) {
+      setMessage({
+        type: 'error',
+        text: 'Failed to send message. Please try again.',
+      })
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -109,10 +146,10 @@ export function ContactSection() {
                     Phone
                   </p>
                   <a
-                    href="tel:+919800000000"
+                    href="tel:+919035083452"
                     className="focus-ring-gold mt-1 inline-block rounded-sm py-1 font-headline text-base font-semibold text-navy-dark hover:text-navy"
                   >
-                    +91 98000 00000
+                    +91 90350 83452
                   </a>
                 </div>
               </li>
@@ -125,10 +162,10 @@ export function ContactSection() {
                     Email
                   </p>
                   <a
-                    href="mailto:advisor@srghappyliving.com"
+                    href="mailto:sameersakurikar@yahoo.com"
                     className="focus-ring-gold mt-1 inline-block break-all rounded-sm py-1 font-headline text-base font-semibold text-navy-dark hover:text-navy"
                   >
-                    advisor@srghappyliving.com
+                    sameersakurikar@yahoo.com
                   </a>
                 </div>
               </li>
@@ -141,7 +178,7 @@ export function ContactSection() {
                     Office
                   </p>
                   <p className="mt-1 font-headline text-base font-semibold text-navy-dark">
-                    14 Brigade Square, MG Road, Bengaluru 560001
+                    A2-201, Paramount Pilatus, Arekere,<br />Off Bannergatta Road, Bengaluru 560076
                   </p>
                 </div>
               </li>
@@ -285,10 +322,40 @@ export function ContactSection() {
                       By submitting, you consent to be contacted by SRG Happy
                       Living regarding your enquiry.
                     </p>
-                    <Button type="submit" size="lg" fullWidth className="lg:w-auto">
-                      Request Advisory Call
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      fullWidth 
+                      disabled={loading}
+                      className="lg:w-auto lg:whitespace-nowrap !bg-gold !text-white hover:!bg-gold/90 disabled:opacity-60 disabled:cursor-not-allowed shadow-lg active:shadow-md"
+                    >
+                      {loading ? 'Sending...' : 'Request Advisory Call'}
                     </Button>
                   </div>
+
+                  {message && (
+                    <div
+                      className={`rounded-lg p-4 flex items-start gap-3 ${
+                        message.type === 'success'
+                          ? 'bg-success/10 border border-success/30'
+                          : 'bg-error/10 border border-error/30'
+                      }`}
+                      role="alert"
+                    >
+                      {message.type === 'success' ? (
+                        <CheckCircle className="size-5 shrink-0 text-success mt-0.5" />
+                      ) : (
+                        <AlertCircle className="size-5 shrink-0 text-error mt-0.5" />
+                      )}
+                      <p
+                        className={`text-sm leading-6 ${
+                          message.type === 'success' ? 'text-success' : 'text-error'
+                        }`}
+                      >
+                        {message.text}
+                      </p>
+                    </div>
+                  )}
                 </form>
               )}
             </div>

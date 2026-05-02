@@ -30,17 +30,14 @@ export function HeroSection() {
               id="hero-heading"
               className="text-pretty text-4xl font-bold leading-[1.08] tracking-tight text-navy-dark sm:text-5xl lg:text-[56px] xl:text-6xl"
             >
-              Architecture for your{' '}
-              <span className="gold-highlight italic text-navy">
-                financial serenity
-              </span>
-              .
+              Strategic wealth management and{' '}
+              <span className="gold-highlight italic text-navy">financial advisory</span>
             </h1>
 
             <p className="max-w-xl text-base leading-8 text-ink-muted sm:text-lg">
-              Expert real-wealth management strategies designed to simplify
-              complex financial landscapes into clear, actionable paths for
-              long-term prosperity.
+              SRG Happy Living Financial Services provides a holistic approach
+              to your financial life, from retirement and investment planning
+              to specialized insurance and loan consultancy.
             </p>
 
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
@@ -48,7 +45,7 @@ export function HeroSection() {
                 to="/contact"
                 className={buttonClasses({ size: 'lg', className: 'w-full sm:w-auto' })}
               >
-                Start Investing
+                Book a consultation
                 <ArrowRight className="size-4" />
               </Link>
               <Link
@@ -59,7 +56,7 @@ export function HeroSection() {
                   className: 'w-full sm:w-auto',
                 })}
               >
-                Our Methodology
+                Learn more
               </Link>
             </div>
           </div>

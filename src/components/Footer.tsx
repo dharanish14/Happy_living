@@ -3,22 +3,21 @@ import { Link } from 'react-router-dom'
 type LinkItem = { label: string; to: string; external?: boolean }
 
 const REGULATORY: LinkItem[] = [
-  { label: 'SEBI Reg. INA000000000', to: '/disclosures' },
-  { label: 'Disclosure Document', to: '/disclosures' },
-  { label: 'Risk Profile Form', to: '/disclosures' },
-  { label: 'Investor Charter', to: '/disclosures' },
+  { label: 'SEBI Reg. INA000022118', to: '/investment-charter' },
+  { label: 'Investor Charter', to: '/investment-charter' },
+  { label: 'Disclosures', to: '/disclosures' },
 ]
 
 const COMPANY: LinkItem[] = [
-  { label: 'About Us', to: '/about' },
-  { label: 'Our Services', to: '/services' },
-  { label: 'Disclosures', to: '/disclosures' },
+  { label: 'Home', to: '/' },
+  { label: 'About', to: '/about' },
+  { label: 'Services', to: '/services' },
   { label: 'Contact', to: '/contact' },
 ]
 
 const LOCATION = [
-  '14 Brigade Square',
-  'MG Road, Bengaluru 560001',
+  'A2-201, Paramount Pilatus, Arekere',
+  'Off Bannergatta Road, Bengaluru 560076',
   'Karnataka, India',
 ]
 
@@ -53,8 +52,9 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/82">
-              A SEBI-registered investment advisory crafting calm,
-              evidence-based wealth strategies that compound across decades.
+              A SEBI-registered investment adviser providing holistic financial
+              advisory — from health assessment and wealth planning to
+              retirement and estate strategy.
             </p>
             <p className="mt-5 inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-gold ring-1 ring-white/10">
               <span className="size-1.5 rounded-full bg-gold" aria-hidden />
@@ -116,7 +116,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col gap-3 py-6 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} SRG Happy Living Advisory Pvt. Ltd. All rights reserved.
+            © {year} SRG Happy Living Financial Services. All rights reserved.
           </p>
           <p className="max-w-2xl leading-6 text-white/70 sm:text-right">
             Investments are subject to market risk. Please read all

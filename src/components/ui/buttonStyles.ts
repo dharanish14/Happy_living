@@ -2,7 +2,7 @@ export type ButtonVariant = 'primary' | 'secondary' | 'success' | 'ghost'
 export type ButtonSize = 'md' | 'lg'
 
 const base =
-  'focus-ring-gold inline-flex items-center justify-center gap-2 font-headline font-semibold tracking-wide whitespace-normal text-center leading-snug transition-[background,color,box-shadow,transform] motion-reduce:transition-none disabled:cursor-not-allowed disabled:opacity-60'
+  'focus-ring-gold inline-flex items-center justify-center gap-2 font-headline font-semibold tracking-wide whitespace-nowrap text-center leading-snug transition-[background,color,box-shadow,transform] motion-reduce:transition-none disabled:cursor-not-allowed disabled:opacity-60'
 
 const sizes: Record<ButtonSize, string> = {
   md: 'min-h-11 px-5 py-3 text-[15px] rounded-[var(--radius-button)]',

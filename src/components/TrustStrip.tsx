@@ -27,8 +27,8 @@ export function TrustStrip() {
               Institutional Trust
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-              We operate under SEBI compliance to protect your interests at
-              every stage.
+              We operate under SEBI Investment Adviser regulations, maintaining
+              complete transparency and ethical standards to protect your interests.
             </p>
             <span
               aria-hidden="true"
