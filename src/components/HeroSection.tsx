@@ -28,20 +28,13 @@ export function HeroSection() {
 
             <h1
               id="hero-heading"
-              className="text-balance text-4xl font-bold leading-[1.05] tracking-tight text-navy-dark sm:text-5xl lg:text-6xl xl:text-7xl"
+              className="text-pretty text-4xl font-bold leading-[1.1] tracking-tight text-navy-dark sm:text-5xl lg:text-[56px] xl:text-6xl"
             >
-              <span className="block">Architecture for</span>
-              <span className="block">
-                Your{' '}
-                <span className="relative inline-block text-navy">
-                  <span className="relative z-10 italic">Financial&nbsp;Serenity</span>
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-gold/35 sm:h-4 lg:h-5"
-                  />
-                </span>
-                .
+              Architecture for your{' '}
+              <span className="italic text-navy bg-[linear-gradient(transparent_62%,rgb(212_175_55_/_0.4)_62%)] [box-decoration-break:clone] [-webkit-box-decoration-break:clone] px-0.5">
+                financial serenity
               </span>
+              .
             </h1>
 
             <p className="max-w-xl text-base leading-relaxed text-ink-muted sm:text-lg">
