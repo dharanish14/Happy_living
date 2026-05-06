@@ -10,6 +10,7 @@ const REGULATORY: LinkItem[] = [
 
 const COMPANY: LinkItem[] = [
   { label: 'Home', to: '/' },
+  { label: 'Blogs', to: '/blogs' },
   { label: 'About', to: '/about' },
   { label: 'Services', to: '/services' },
   { label: 'Contact', to: '/contact' },
