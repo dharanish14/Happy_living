@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import { HeroSection } from '../components/HeroSection'
 import { buttonClasses } from '../components/ui/buttonStyles'
 import { ArrowRight } from '../components/ui/Icon'
-import { FeaturedBlogs } from '../components/FeaturedBlogs'
 
 const CORE_EXPERTISE = [
   'Financial Health Checks and financial planning',
@@ -97,8 +96,6 @@ export function HomePage() {
           </div>
         </div>
       </section>
-
-      <FeaturedBlogs />
     </>
   )
 }

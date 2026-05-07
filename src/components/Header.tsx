@@ -7,7 +7,6 @@ const NAV_LINKS = [
   { to: '/', label: 'Home', end: true },
   { to: '/vision-mission', label: 'Vision & Mission' },
   { to: '/services', label: 'Services' },
-  { to: '/blogs', label: 'Blogs' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ]
