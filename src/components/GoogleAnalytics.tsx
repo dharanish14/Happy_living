@@ -9,6 +9,7 @@ declare global {
 }
 
 const GA_SRC_BASE = 'https://www.googletagmanager.com/gtag/js'
+const DEFAULT_MEASUREMENT_ID = 'G-J5WBY22DX0'
 
 function ensureGtag(measurementId: string) {
   if (typeof document === 'undefined') return
@@ -37,22 +38,23 @@ function ensureGtag(measurementId: string) {
 }
 
 export function GoogleAnalytics() {
-  const measurementId = (
+  const measurementIdFromEnv = (
     import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined
   )?.trim()
+  const measurementId = measurementIdFromEnv || DEFAULT_MEASUREMENT_ID
   const location = useLocation()
 
   useEffect(() => {
-    if (!measurementId) return
     ensureGtag(measurementId)
   }, [measurementId])
 
   useEffect(() => {
-    if (!measurementId) return
     if (!window.gtag) return
 
     window.gtag('event', 'page_view', {
       page_path: location.pathname + location.search + location.hash,
+      page_location: window.location.href,
+      page_title: document.title,
     })
   }, [measurementId, location.pathname, location.search, location.hash])
 
