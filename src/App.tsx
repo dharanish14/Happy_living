@@ -9,6 +9,7 @@ import { ServicesPage } from './pages/ServicesPage'
 import { InvestmentCharterPage } from './pages/InvestmentCharterPage'
 import { VisionMissionPage } from './pages/VisionMissionPage'
 import { initEmailJS } from './services/emailService'
+import { GoogleAnalytics } from './components/GoogleAnalytics'
 
 function App() {
   useEffect(() => {
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <GoogleAnalytics />
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
