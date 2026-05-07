@@ -18,7 +18,7 @@ const FAQS: Faq[] = [
     id: 'faq-min',
     question: 'What is the minimum investment required?',
     answer:
-      'Our personalised advisory begins at ₹25 Lakhs of investable assets. For broader planning, our digital plans start at ₹50,000 per year, designed to give every serious investor access to fiduciary advice.',
+      'Our personalised advisory is designed for serious investors and the minimum depends on your goals and complexity. Contact us to confirm eligibility and fees.',
   },
   {
     id: 'faq-safety',

@@ -5,7 +5,7 @@ type Stat = {
 }
 
 const STATS: Stat[] = [
-  { value: '₹500', suffix: 'Cr+', label: 'Assets under advisement' },
+  { value: '500', suffix: 'Cr+', label: 'Assets under advisement' },
   { value: '50', suffix: '+', label: 'Years of combined expertise' },
   { value: '5.0', suffix: '★', label: 'Average client rating' },
   { value: '98', suffix: '%', label: 'Client retention rate' },

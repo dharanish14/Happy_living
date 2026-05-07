@@ -15,16 +15,16 @@ const INITIAL: FormState = {
   fullName: '',
   phone: '',
   email: '',
-  service: 'Portfolio Management',
+  service: 'Wealth Planning and Management',
   notes: '',
 }
 
 const SERVICES = [
-  'Portfolio Management',
+  'Wealth Planning and Management',
+  'Asset Management',
   'Retirement Planning',
-  'Wealth Transfer',
-  'Equity Advisory',
-  'Comprehensive Plan',
+  'Estate Planning',
+  'Financial Health Check',
 ]
 
 export function ContactSection() {

@@ -35,8 +35,8 @@ const PROCESS = [
 const FEES = [
   {
     name: 'Portfolio Scan',
-    price: '₹5,000',
-    cadence: '+ GST · one-time',
+    price: 'Contact for fees',
+    cadence: '',
     description: 'A quick scan of your existing investments with instrument-level suggestions.',
     features: [
       'Review of existing investment instruments',
@@ -47,8 +47,8 @@ const FEES = [
   },
   {
     name: 'Financial Health Check',
-    price: '₹5,000',
-    cadence: '+ GST · one-time',
+    price: 'Contact for fees',
+    cadence: '',
     description: 'Deep-dive into your portfolio with Monte Carlo success-rate modelling.',
     features: [
       'Analysis of investments & horizon',
@@ -59,29 +59,29 @@ const FEES = [
   },
   {
     name: 'Complete Financial Plan',
-    price: '₹15,000',
-    cadence: '+ GST · first year',
-    description: 'End-to-end financial planning with yearly follow-up at ₹8,000/year.',
+    price: 'Contact for fees',
+    cadence: '',
+    description: 'End-to-end financial planning with yearly follow-up.',
     features: [
       'Goal setting with timelines',
       'Instrument selection & allocation',
       'Accumulation & withdrawal plan',
       'Tax planning',
-      'Yearly review @ ₹8,000 + GST',
+      'Yearly review & course correction',
     ],
     featured: true,
   },
   {
     name: 'Plan + Estate',
-    price: '₹25,000',
-    cadence: '+ GST · first year',
-    description: 'Complete financial planning plus estate & succession planning. Yearly follow-up at ₹8,000/year.',
+    price: 'Contact for fees',
+    cadence: '',
+    description: 'Complete financial planning plus estate & succession planning.',
     features: [
       'Everything in Complete Plan',
       'Succession & will preparation',
       'Legacy transfer structuring',
       'Multi-generational wealth guidance',
-      'Yearly review @ ₹8,000 + GST',
+      'Yearly review & course correction',
     ],
   },
 ]
@@ -218,14 +218,16 @@ export function ServicesPage() {
                   >
                     {tier.price}
                   </p>
-                  <p
-                    className={[
-                      'mt-1 text-xs font-semibold uppercase tracking-wide',
-                      tier.featured ? 'text-gold' : 'text-ink-muted',
-                    ].join(' ')}
-                  >
-                    {tier.cadence}
-                  </p>
+                  {tier.cadence ? (
+                    <p
+                      className={[
+                        'mt-1 text-xs font-semibold uppercase tracking-wide',
+                        tier.featured ? 'text-gold' : 'text-ink-muted',
+                      ].join(' ')}
+                    >
+                      {tier.cadence}
+                    </p>
+                  ) : null}
                 </div>
                 <ul
                   role="list"
